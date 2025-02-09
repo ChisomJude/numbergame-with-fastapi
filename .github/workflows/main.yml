@@ -3,8 +3,8 @@ name: Deploy FastAPI to AWS Lambda
 on:
   push:
     branches:
-      - main  # Runs when pushing to the main branch
-
+      - master  # Runs when pushing to the main branch
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
