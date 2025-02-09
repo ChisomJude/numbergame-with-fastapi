@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Fun Fact</title>
+</head>
+<body>
+    <h2>Enter A Number and Get a Fun Fact</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="fetchNumberInfo()">Get Fun Fact</button>
+    <p id="result"></p>
+
+    <script>
+        async function fetchNumberInfo() {
+            const number = document.getElementById("numberInput").value;
+            const response = await fetch(`https://your-api-gateway-url/prod/api/classify-number?number=${number}`);
+            const data = await response.json();
+
+            document.getElementById("result").innerText = data.error ? "Invalid number!" : 
+                `Number: ${data.number}\n
+                Prime: ${data.is_prime}\n
+                Perfect: ${data.is_perfect}\n
+                Properties: ${data.properties.join(", ")}\n
+                Digit Sum: ${data.digit_sum}\n
+                Fun Fact: ${data.fun_fact}`;
+        }
+    </script>
+</body>
+</html>
