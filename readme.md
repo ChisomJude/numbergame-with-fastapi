@@ -1,7 +1,7 @@
-# numbergame with FastAPI
-A simple FastAPI for number classification  with a backend API hosted on Lamda and a simple frontend on S3
+# Numbergame with FastAPI
+A simple FastAPI for number classification  with a backend API hosted on AWS Lambda, serving request via Api-Gateway and a simple frontend on S3
 
-This project collects input from user and return output on the number classification with funfacts integration from http://numbersapi.com/.
+This project collects user input and returns output on the number classification with funfacts integration from http://numbersapi.com/.
 
 ## API Endpoints
 /test
